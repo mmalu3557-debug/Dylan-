@@ -1,0 +1,31 @@
+{
+  "name": "symphony-claude",
+  "version": "0.1.0",
+  "description": "Symphony (openai/symphony SPEC.md) em TypeScript, usando Claude Code como agente e Linear como tracker. Roda no Windows, macOS e Linux.",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.10"
+  },
+  "bin": {
+    "symphony": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/cli.js",
+    "dev": "tsx src/cli.ts",
+    "doctor": "node dist/cli.js doctor",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "node --import tsx --test --test-reporter=spec \"test/**/*.test.ts\""
+  },
+  "dependencies": {
+    "liquidjs": "10.30.1",
+    "yaml": "2.9.1"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.5",
+    "tsx": "4.23.15",
+    "typescript": "5.9.3"
+  }
+}
